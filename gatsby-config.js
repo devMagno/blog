@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `My Blog`,
-    description: `A blog about frontend development and other cool stuff, built with Gatsby and TypeScript.`,
+    title: `Guilherme Magno`,
+    description: `A blog about frontend development and other cool stuff, built with Gatsby.`,
     author: `@devmagno`,
+    position: `Frontend Developer`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
