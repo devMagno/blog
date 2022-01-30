@@ -1,23 +1,61 @@
 import * as React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Seo from '../components/seo'
 import PostItem from '../components/PostItem'
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <PostItem
-      slug="/slug/"
-      category="JS"
-      date="15 de julho de 2022"
-      timeToRead="5"
-      title="JavaScript: Qual a diferença entre Escopo e Contexto?"
-      description="Alguns conceitos do JavaScript são um pouco confusos para iniciantes. Um muito recorrente saber a diferença entre Escopo e Contexto…"
-      background="#efd81d"
-      color="black"
-    />
-  </Layout>
-)
+const IndexPage = () => {
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query PostList {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              background
+              category
+              date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+              description
+              title
+              color
+            }
+            timeToRead
+          }
+        }
+      }
+    }
+  `)
+
+  const postList = allMarkdownRemark.edges
+
+  return (
+    <Layout>
+      <Seo title="Home" />
+      {postList.map(
+        ({
+          node: {
+            frontmatter: { background, category, date, description, title, color },
+            fields: { slug },
+            timeToRead,
+          },
+        }) => (
+          <PostItem
+            slug={slug}
+            category={category}
+            date={date}
+            timeToRead={timeToRead}
+            title={title}
+            description={description}
+            background={background}
+            color={color}
+          />
+        )
+      )}
+    </Layout>
+  )
+}
 
 export default IndexPage
