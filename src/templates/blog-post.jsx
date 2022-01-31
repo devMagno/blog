@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import * as React from 'react'
 
 const BlogPost = ({ data }) => {
