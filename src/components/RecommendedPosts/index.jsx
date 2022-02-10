@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 import * as S from './styled'
 
-const RecommendedPosts = ({ previous, next }) => {
+const RecommendedPosts = ({ next, previous }) => {
   return (
     <S.RecommendedWrapper>
       {previous && (

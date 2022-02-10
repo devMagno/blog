@@ -1,7 +1,7 @@
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// Adding slug to every post
+// To add the slug field to each post
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   // Ensures we are processing only markdown files
@@ -22,7 +22,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-// Creating pages for each post
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
@@ -51,11 +50,11 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
           previous {
-            frontmatter {
-              title
-            }
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -69,6 +68,8 @@ exports.createPages = ({ graphql, actions }) => {
         path: node.fields.slug,
         component: path.resolve(`./src/templates/blog-post.jsx`),
         context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
           slug: node.fields.slug,
           previousPost: next,
           nextPost: previous,
@@ -77,16 +78,16 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     const postsPerPage = 6
-    const numberOfPages = Math.ceil(posts.length / postsPerPage)
+    const numPages = Math.ceil(posts.length / postsPerPage)
 
-    Array.from({ length: numberOfPages }).forEach((_, index) => {
+    Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
         path: index === 0 ? `/` : `/page/${index + 1}`,
         component: path.resolve(`./src/templates/blog-list.jsx`),
         context: {
           limit: postsPerPage,
           skip: index * postsPerPage,
-          numberOfPages,
+          numPages,
           currentPage: index + 1,
         },
       })

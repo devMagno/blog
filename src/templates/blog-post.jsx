@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Seo from '../components/Seo'
+import Seo from '../components/seo'
 import RecommendedPosts from '../components/RecommendedPosts'
 import Comments from '../components/Comments'
 
@@ -10,13 +10,12 @@ import * as S from '../components/Post/styled'
 
 const BlogPost = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const previous = pageContext.previousPost
   const next = pageContext.nextPost
+  const previous = pageContext.previousPost
 
   return (
     <Layout>
       <Seo title={post.frontmatter.title} />
-
       <S.PostHeader>
         <S.PostDate>
           {post.frontmatter.date} • {post.timeToRead} min de leitura
@@ -31,7 +30,7 @@ const BlogPost = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </S.MainContent>
 
-      <RecommendedPosts previous={previous} next={next} />
+      <RecommendedPosts next={next} previous={previous} />
 
       <Comments url={post.fields.slug} title={post.frontmatter.title} />
     </Layout>
