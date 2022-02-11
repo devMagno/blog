@@ -4,7 +4,7 @@ export const SidebarWrapper = styled.aside`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #192734;
+  background-color: var(--mediumBackground);
 
   width: 20rem;
   padding: 2rem;

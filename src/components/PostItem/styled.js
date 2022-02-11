@@ -2,14 +2,18 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export const PostItemLink = styled(Link)`
-  color: #8899a6;
+  color: var(--texts);
   text-decoration: none;
   transition: color 0.2s;
 
   display: flex;
 
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
+  }
+
+  body#grid & {
+    background-color: var(--background);
   }
 `
 
@@ -19,7 +23,14 @@ export const PostItemWrapper = styled.section`
 
   width: 100%;
   padding: 2rem 3rem;
-  border-bottom: 1px solid #38444d;
+  border-bottom: 1px solid var(--borders);
+
+  body#grid & {
+    border: none;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 export const PostItemTag = styled.div`
@@ -35,6 +46,10 @@ export const PostItemTag = styled.div`
   border-radius: 50%;
   background-color: ${props => (props.background ? props.background : 'black')};
   text-transform: uppercase;
+
+  body#grid & {
+    margin-bottom: 1.5rem;
+  }
 `
 
 export const PostItemInfo = styled.div`
@@ -53,6 +68,11 @@ export const PostItemTitle = styled.h1`
   font-size: 1.6rem;
 
   margin: 0.2rem 0 0.5rem;
+
+  body#grid & {
+    line-height: 1.1;
+    margin: 0.8rem 0;
+  }
 `
 
 export const PostItemDescription = styled.p`

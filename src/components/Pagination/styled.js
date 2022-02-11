@@ -5,17 +5,17 @@ export const PaginationWrapper = styled.section`
   align-items: center;
   justify-content: space-between;
 
-  color: #8899a6;
+  color: var(--texts);
   padding: 1.5rem 3rem;
-  border-top: 1px solid #38444d;
+  border-top: 1px solid var(--borders);
 
   a {
-    color: #8899a6;
+    color: var(--texts);
     text-decoration: none;
     transition: color 0.5s;
 
     &:hover {
-      color: #1fa1f2;
+      color: var(--highlight);
     }
   }
 `
