@@ -38,6 +38,12 @@ export const PostItemWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
   }
+
+  ${media.lessThan('large')`
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 .5rem 2rem .5rem;
+  `}
 `
 
 export const PostItemTag = styled.div`
