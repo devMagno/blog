@@ -8,6 +8,8 @@ import { Lightbulb } from '@styled-icons/fluentui-system-regular/Lightbulb'
 import { Grid } from '@styled-icons/boxicons-solid/Grid'
 import { TextBulletListLtr as List } from '@styled-icons/fluentui-system-regular/TextBulletListLtr'
 
+import getThemeColor from '../../utils/getThemeColor'
+
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
   const [display, setDisplay] = useState(null)
@@ -31,12 +33,26 @@ const MenuBar = () => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink to="/" title="Página inicial">
+        <S.MenuBarLink
+          to="/"
+          title="Página inicial"
+          cover
+          direction="right"
+          bg={getThemeColor()}
+          duration={0.6}
+        >
           <S.MenuBarItem>
             <Home />
           </S.MenuBarItem>
         </S.MenuBarLink>
-        <S.MenuBarLink to="/search/" title="Pesquisar">
+        <S.MenuBarLink
+          to="/search/"
+          title="Pesquisar"
+          cover
+          direction="right"
+          bg={getThemeColor()}
+          duration={0.6}
+        >
           <S.MenuBarItem>
             <Search />
           </S.MenuBarItem>
@@ -58,6 +74,7 @@ const MenuBar = () => {
           onClick={() => {
             window.__setPreferredDisplay(isListMode ? 'grid' : 'list')
           }}
+          className="display"
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>

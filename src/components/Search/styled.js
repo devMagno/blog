@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const SearchWrapper = styled.section`
   background: var(--background);
@@ -17,10 +18,18 @@ export const SearchWrapper = styled.section`
   .ais-SearchBox,
   .ais-Stats {
     padding: 0.5rem 3rem;
+
+    ${media.lessThan('large')`
+      padding: 0.5rem 1rem;
+    `}
   }
 
   .ais-SearchBox {
     padding-top: 6rem;
+
+    ${media.lessThan('large')`
+      padding-top: 1rem;
+    `}
   }
 
   .ais-Stats {
@@ -33,7 +42,7 @@ export const SearchWrapper = styled.section`
       border-bottom: 1px solid var(--borders);
       border-top: 1px solid var(--borders);
       display: grid;
-      grid-area: posts;
+      grid-area: card;
       grid-gap: 1px;
       grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       margin-top: 2rem;
