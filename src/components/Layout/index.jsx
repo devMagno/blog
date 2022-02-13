@@ -2,7 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import Sidebar from '../Sidebar'
-import MenuBar from '../Menubar'
+import MenuBar from '../MenuBar'
 import GlobalStyles from '../../styles/global'
 import { TransitionPortal } from 'gatsby-plugin-transition-link'
 
