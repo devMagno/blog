@@ -4,6 +4,7 @@ title: Waiting to die
 description: So say goodbye to love and hold your head up high
 category: svg
 background: "#7d669e"
+image: "/assets/img/desert.jpg"
 color: white
 ---
 

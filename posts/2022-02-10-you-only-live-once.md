@@ -4,6 +4,7 @@ title: You only live once
 description: But if you do it right, once is enough
 category: dev
 background: "#61728f"
+image: "/assets/img/desert.jpg"
 color: white
 ---
 

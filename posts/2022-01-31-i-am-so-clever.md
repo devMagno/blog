@@ -4,6 +4,7 @@ title: I am so clever
 description: That sometimes I don't understand a single word of what I am saying
 category: 'CSS'
 background: '#24809e'
+image: "/assets/img/desert.jpg"
 color: 'white'
 ---
 

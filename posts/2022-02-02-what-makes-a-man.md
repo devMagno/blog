@@ -4,6 +4,7 @@ title: What makes a man?
 description: Spend his whole life in disguise?
 category: misc
 background: "#47650b"
+image: "/assets/img/desert.jpg"
 color: white
 ---
 

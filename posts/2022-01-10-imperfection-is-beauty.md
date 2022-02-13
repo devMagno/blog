@@ -4,6 +4,7 @@ title: Imperfection is beauty, madness is genius
 description: And it's better to be absolutely ridiculous than absolutely boring
 category: css
 background: "#24809e"
+image: "/assets/img/desert.jpg"
 color: white
 ---
 

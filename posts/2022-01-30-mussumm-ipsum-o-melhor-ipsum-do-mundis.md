@@ -4,6 +4,7 @@ description: 'Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cu
 date: '2022-01-30 08:51:23'
 category: 'MISC'
 background: 'black'
+image: "/assets/img/desert.jpg"
 color: 'white'
 ---
 

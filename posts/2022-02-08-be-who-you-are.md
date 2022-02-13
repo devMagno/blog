@@ -4,6 +4,7 @@ title: Be who you are
 description: Because those who mind don't matter, and those who matter don't mind
 category: dev
 background: "#61728f"
+image: "/assets/img/desert.jpg"
 color: white
 ---
 
