@@ -1,7 +1,7 @@
 ---
 title: Testando CMS
 description: Apenas testando o CMS :)
-date: 2022-02-13 10:34:25
+date: 2022-02-13 10:37:42
 image: https://github.com/devmagno.png
 category: CSS
 background: "#2DA0C3"
