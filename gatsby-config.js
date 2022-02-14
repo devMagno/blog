@@ -86,5 +86,8 @@ module.exports = {
     },
     // Enabling PWA in Gatsby, docs: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    // Integration with Netlify CMS, docs: https://www.gatsbyjs.com/plugins/gatsby-plugin-netlify-cms/
+    // Netlify CMS config docs: https://www.netlifycms.org/docs/add-to-your-site/#configuration
+    `gatsby-plugin-netlify-cms`,
   ],
 }
