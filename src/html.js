@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function HTML(props) {
+
+  const isBrowser = typeof window !== "undefined"
+
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -79,6 +82,14 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
+        {isBrowser && window.netlifyIdentity && window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        })}
       </body>
     </html>
   )
