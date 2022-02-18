@@ -5,18 +5,14 @@ import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom'
 import Hit from './Hit'
 import * as S from './styled'
 
-const algolia = {
-  appId: process.env.GATSBY_ALGOLIA_APP_ID,
-  searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
-  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-}
+const Search = ({ algolia }) => {
+  var { appId, searchOnlyApiKey, indexName } = algolia
+  
+  const searchClient = algoliasearch(appId, searchOnlyApiKey)
 
-const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey)
-
-const Search = () => {
   return (
     <S.SearchWrapper>
-      <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
+      <InstantSearch searchClient={searchClient} indexName={indexName}>
         <SearchBox autoFocus translations={{ placeholder: 'Pesquisar...' }} />
 
         <Stats

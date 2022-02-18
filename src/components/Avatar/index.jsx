@@ -1,24 +1,18 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import * as S from './styled'
 
 const Avatar = () => {
-  const { avatarImage } = useStaticQuery(
-    graphql`
-      query {
-        avatarImage: file(relativePath: { eq: "profile-picture.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 60) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `
+  return (
+    <S.AvatarWrapper>
+      <StaticImage
+        src="../../images/profile-picture.jpg"
+        alt="Guilherme Magno avatar"
+        placeholder="blurred"
+      />
+    </S.AvatarWrapper>
   )
-  
-  return <S.AvatarWrapper fluid={avatarImage.childImageSharp.fluid} />
 }
 
 export default Avatar
